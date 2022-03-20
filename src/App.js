@@ -42,8 +42,41 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 4,
+    content: '오늘의 일기',
+    date: 1647592108647,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: '오늘의 일기 22',
+    date: 1647592108648,
+  },
+  {
+    id: 3,
+    emotion: 1,
+    content: '오늘의 일기 33',
+    date: 1647592108649,
+  },
+  {
+    id: 4,
+    emotion: 3,
+    content: '오늘의 일기 4',
+    date: 1647592108650,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: '오늘의 일기 55',
+    date: 1647592108651,
+  },
+];
+
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const [data, dispatch] = useReducer(reducer, dummyData);
   const dataId = useRef(0);
 
   //create
@@ -83,18 +116,8 @@ function App() {
       <DiaryDispatchContext.Provider value={{ onCreate, onRemove, onEdit }}>
         <BrowserRouter>
           <div className="App">
-            <MyHeader
-              headeText={'APP'}
-              leftChild={
-                <MyButton text={'왼쪽'} onClick={() => alert('뒤로가기')} />
-              }
-              rightChild={
-                <MyButton text={'오른쪽'} onClick={() => alert('앞으로가기')} />
-              }
-            />
-
+            <MyHeader />
             <h2>App.js</h2>
-
             <MyButton
               text={'버튼'}
               onClick={() => alert('버튼 클릭')}
@@ -102,9 +125,8 @@ function App() {
             />
             <MyButton text={'버튼'} onClick={() => alert('버튼 클릭')} />
             <MyButton text={'버튼'} onClick={() => alert('버튼 클릭')} />
-
             <Routes>
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
               <Route path="/edit" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
