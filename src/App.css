@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
+:root {
+  /* background-color */
+  --color-basic: #ececec;
+  --color-emotion1: #fd565f;
+  --color-emotion2: #fd8446;
+  --color-emotion3: #fdce17;
+  --color-emotion4: #9dd772;
+  --color-emotion5: #64c964;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -45,15 +55,15 @@ body {
   font-family: 'Nanum Pen Script';
 }
 .MyButton_default {
-  background-color: #ececec;
+  background-color: var(--color-basic);
   color: black;
 }
 .MyButton_positive {
-  background-color: #64c964;
+  background-color: var(--color-emotion5);
   color: white;
 }
 .MyButton_negative {
-  background-color: #fd565f;
+  background-color: var(--color-emotion1);
   color: white;
 }
 
@@ -88,4 +98,87 @@ header .head_btn_right {
 
 header button {
   font-family: 'Nanum Pen Script';
+}
+
+/* DiaryList */
+
+.DiaryList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryList .menu_wrapper .right_col {
+  flex-grow: 1;
+}
+.DiaryList .menu_wrapper .right_col button {
+  width: 100%;
+}
+
+.DiaryList .ControlMenu {
+  font-family: 'Nanum pen script';
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e2e2e2;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.DiaryItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.DiaryItem .emotion_img_wrapper {
+  display: flex;
+  justify-content: center;
+  min-width: 120px;
+  height: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.DiaryItem .emotion_img_wrapper_1 {
+  background-color: var(--color-emotion1);
+}
+.DiaryItem .emotion_img_wrapper_2 {
+  background-color: var(--color-emotion2);
+}
+.DiaryItem .emotion_img_wrapper_3 {
+  background-color: var(--color-emotion3);
+}
+.DiaryItem .emotion_img_wrapper_4 {
+  background-color: var(--color-emotion4);
+}
+.DiaryItem .emotion_img_wrapper_5 {
+  background-color: var(--color-emotion5);
+}
+
+.DiaryItem .emotion_img_wrapper img {
+  width: 50%;
+}
+
+.DiaryItem .info_wrapper {
+  cursor: pointer;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.info_wrapper .diary_date {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.info_wrapper .diary_content_preview {
+  font-size: 18px;
+}
+
+.btn_wrapper {
+  min-width: 120px;
 }
