@@ -8,6 +8,7 @@
   --color-emotion3: #fdce17;
   --color-emotion4: #9dd772;
   --color-emotion5: #64c964;
+  --color-white: #fff;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
   }
 }
 #root {
-  background-color: white;
+  background-color: var(--color-white);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -60,11 +61,11 @@ body {
 }
 .MyButton_positive {
   background-color: var(--color-emotion5);
-  color: white;
+  color: var(--color-white);
 }
 .MyButton_negative {
   background-color: var(--color-emotion1);
-  color: white;
+  color: var(--color-white);
 }
 
 /* Header */
@@ -127,6 +128,8 @@ header button {
   cursor: pointer;
 }
 
+/* DiaryItem */
+
 .DiaryItem {
   display: flex;
   justify-content: space-between;
@@ -181,4 +184,98 @@ header button {
 
 .btn_wrapper {
   min-width: 120px;
+}
+
+/* DiaryEditor */
+.DiaryEditor {
+  margin-bottom: 40px;
+}
+
+.DiaryEditor h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.DiaryEditor .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-basic);
+  padding: 10px 20px;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-family: 'Nanum Pen script';
+}
+
+.DiaryEditor .emotion_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 2%;
+}
+
+.DiaryEditor .text_wrapper {
+  margin-bottom: 20px;
+}
+.DiaryEditor .input_box textarea {
+  font-family: 'Nanum Pen script';
+  font-size: 22px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+}
+
+.control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* EmotionItem */
+.EmotionItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.EmotionItem img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.EmotionItem span {
+  font-size: 18px;
+}
+.Emotion_off {
+  background-color: var(--color-basic);
+}
+
+.Emotion_on_1 {
+  background-color: var(--color-emotion1);
+  color: var(--color-white);
+}
+
+.Emotion_on_2 {
+  background-color: var(--color-emotion2);
+  color: var(--color-white);
+}
+.Emotion_on_3 {
+  background-color: var(--color-emotion3);
+  color: var(--color-white);
+}
+.Emotion_on_4 {
+  background-color: var(--color-emotion4);
+  color: var(--color-white);
+}
+.Emotion_on_5 {
+  background-color: var(--color-emotion5);
+  color: var(--color-white);
 }
