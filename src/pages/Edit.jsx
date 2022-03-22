@@ -1,24 +1,33 @@
-import React from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useContext, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { DiaryStateContext } from '../App';
+import DiaryEditor from '../components/DiaryEditor';
 
 const Edit = () => {
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { id } = useParams();
+  const diaryList = useContext(DiaryStateContext);
+  const [originData, setOriginData] = useState();
 
-  const id = searchParams.get('id'); // get 쿼리 스트링 사용
-  console.log('id는:', id);
+  useEffect(() => {
+    if (diaryList.length >= 1) {
+      const targetDiary = diaryList.find(
+        (it) => parseInt(it.id) === parseInt(id)
+      );
 
-  const mode = searchParams.get('mode');
-  console.log('mode는', mode);
+      if (targetDiary) {
+        setOriginData(targetDiary);
+      } else {
+        navigate('/', { replace: true });
+      }
+    }
+  }, [id, diaryList]);
 
   return (
+    // originData가 존재하면 diaryEditor 전달
     <div>
-      <h2>EDIT</h2>
-      <button onClick={() => setSearchParams({ who: 'hwan' })}>
-        qs 바꾸기
-      </button>
-
-      <button onClick={() => navigate('/home')}> home으로 ㄱㅂㄹㄱ</button>
+      {originData && <DiaryEditor isEdit={true} originData={originData} />}
     </div>
   );
 };
