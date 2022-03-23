@@ -5,8 +5,9 @@ import Home from './pages/Home';
 import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary';
-import React, { useReducer, useRef } from 'react';
+import React, { useEffect, useReducer, useRef } from 'react';
 
+//모든 데이터 수정하는 reducer
 const reducer = (state, action) => {
   let newState = [];
   switch (action.type) {
@@ -34,48 +35,30 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+
+  // newState가 변화할때마다 localstoage에 저장하도록한다.
+  localStorage.setItem('diary', JSON.stringify(newState));
   return newState;
 };
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const dummyData = [
-  {
-    id: 1,
-    emotion: 4,
-    content: '오늘의 일기',
-    date: 1647592108647,
-  },
-  {
-    id: 2,
-    emotion: 2,
-    content: '오늘의 일기 22',
-    date: 1647592108648,
-  },
-  {
-    id: 3,
-    emotion: 1,
-    content: '오늘의 일기 33',
-    date: 1647592108649,
-  },
-  {
-    id: 4,
-    emotion: 3,
-    content: '오늘의 일기 4',
-    date: 1647592108650,
-  },
-  {
-    id: 5,
-    emotion: 5,
-    content: '오늘의 일기 55',
-    date: 1647592108651,
-  },
-];
-
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
-  const dataId = useRef(6); // 더미데이터의 id가 5까지 있으므로 초기값을 6부터 설정
+  const [data, dispatch] = useReducer(reducer, []); // 기본값 빈배열
+  const dataId = useRef(0); // 더미데이터의 id가 5까지 있으므로 초기값을 6부터 설정
+
+  // localstroge
+  useEffect(() => {
+    const localData = localStorage.getItem('diary');
+    if (localData) {
+      const diaryList = JSON.parse(localData).sort(
+        (a, b) => parseInt(b.id) - parseInt(a.id)
+      );
+      dataId.current = parseInt(diaryList[0].id) + 1;
+      dispatch({ type: 'INIT', data: diaryList });
+    }
+  }, []);
 
   //create
   const onCreate = (date, content, emotion) => {
