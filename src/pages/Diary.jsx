@@ -4,7 +4,7 @@ import { DiaryStateContext } from '../App';
 import DiaryList from '../components/DiaryList';
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
-import emotionList from '../util/emotion.js';
+import { emotionList } from '../util/emotion';
 
 const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
@@ -56,7 +56,27 @@ const Diary = () => {
           }
         />
 
-        <div>오늘의 감정</div>
+        <article>
+          <section>
+            <h4>오늘의 감정</h4>
+            <div
+              className={[
+                'diary_img_wrapper',
+                `diary_img_wrapper_${emotionitem.emotion_id}`,
+              ].join(' ')}
+            >
+              <img src={emotionitem.emotion_img} alt="감정 이미지" />
+              <div className="emotion_desc">{emotionitem.emotion_desc}</div>
+            </div>
+          </section>
+
+          <section>
+            <h4>오늘의 일기</h4>
+            <div className="diary_content_wrppaer">
+              <p>{data.content}</p>
+            </div>
+          </section>
+        </article>
       </div>
     );
   }
