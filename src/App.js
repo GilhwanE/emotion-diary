@@ -75,7 +75,7 @@ const dummyData = [
 
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
-  const dataId = useRef(0);
+  const dataId = useRef(6); // 더미데이터의 id가 5까지 있으므로 초기값을 6부터 설정
 
   //create
   const onCreate = (date, content, emotion) => {
