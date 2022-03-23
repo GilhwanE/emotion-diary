@@ -24,7 +24,11 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
+        // Date객체는 시간 분 초 를 받는다.
       ).getTime();
 
       setData(
