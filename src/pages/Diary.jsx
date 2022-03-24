@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { DiaryStateContext } from '../App';
-import DiaryList from '../components/DiaryList';
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
 import { emotionList } from '../util/emotion';
@@ -30,7 +29,6 @@ const Diary = () => {
       );
       if (targetDiary) {
         setData(targetDiary);
-        console.log(targetDiary);
       } else {
         // 일기가 없을때
         alert('존재하지 않는 일기입니다.');
