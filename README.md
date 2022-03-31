@@ -8,7 +8,7 @@
 ### 완성된 화면 
 
  1. 메인 Home 화면 
-![스크린샷 2022-03-24 16.51.06.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/243d8b1e-e042-4c92-8e8b-e65593f69760/스크린샷_2022-03-24_16.51.06.png)
+    ![스크린샷 2022-03-24 16.51.06.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/243d8b1e-e042-4c92-8e8b-e65593f69760/스크린샷_2022-03-24_16.51.06.png)
 
  2. 새 일기 작성 New 화면 
 ![스크린샷 2022-03-24 16.50.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f007436-29f4-41f3-b1dc-d1471c07a234/스크린샷_2022-03-24_16.50.26.png)
