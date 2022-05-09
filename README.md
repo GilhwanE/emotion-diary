@@ -8,15 +8,19 @@
 ### 🖥 완성된 화면 
 
  1. 메인 Home 화면 
-  
+ ![메인](https://user-images.githubusercontent.com/63918911/167430564-2c559fcd-d4a1-40be-b684-1df1cdb2e53f.png)
+
 
  2. 새 일기 작성 New 화면 
+![스크린샷 2022-05-09 23 15 39](https://user-images.githubusercontent.com/63918911/167429915-b3cfd3e3-9b03-404e-b919-9d5116bfff79.png)
 
 
  3. 일기 상세 화면 
+![스크린샷 2022-05-09 23 21 36](https://user-images.githubusercontent.com/63918911/167430713-655cf6ef-6d35-434f-a0e0-412af0ad2b6c.png)
 
 
  4. 일기 수정 화면
+![스크린샷 2022-05-09 23 22 04](https://user-images.githubusercontent.com/63918911/167430795-4d7f5390-6c08-426b-a26a-1e67b678dc4e.png)
 
  
  ## 🎯 목표
