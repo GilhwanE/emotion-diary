@@ -46,6 +46,7 @@
 - Mac에서 발생된 문제시 sudo를 앞에 작성하지 않으면 발생된 문제였습니다.
 
 ### ❌ 버그 이슈
+
 1. 키값 중복오류
 
 Encountered two children with the same key, `1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
@@ -54,9 +55,8 @@ Encountered two children with the same key, `1`. Keys should be unique so that c
 💡 key값이 동일하게 사용되었을때 나타나는 에러 메시지로 
 더미데이터를 이용하여 데이터 초기값을 셋팅한후 useRef와 같은 초기값 상태에 값을 살펴줘야한다.
 ex) 더미테이터가 id가 5까지 있다면 useRef(6) 6으로 초기값 변경
-
 </aside>
-
+<br>
 
 2.  일기 작성시 날짜 선택에서 31일을 선택하면 31일자 일기가 일기List에 보여지지 않음.
 
